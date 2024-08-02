@@ -7,14 +7,17 @@
 #include <boost/lexical_cast.hpp>
 #include <iostream>
 #include <map>
-
+#include <yaml-cpp/yaml.h>
 // 定义好的基类
 class ConfVarBase {
 public:
     typedef std::shared_ptr<ConfVarBase> ptr;
 
-    ConfVarBase(const std::string &name, const std::string &description = "")
-        : m_name(name), m_description(description) {}
+    ConfVarBase( std::string &name,  std::string &description )
+        : m_name(name), m_description(description) {
+           std::transform(name.begin(), name.end(), name.begin(),
+               [](unsigned char c) { return std::tolower(c); });
+        }
 
     virtual ~ConfVarBase() {}
 
@@ -35,7 +38,7 @@ class ConfVar : public ConfVarBase {
 public:
     typedef std::shared_ptr<ConfVar> ptr;
 
-    ConfVar(const std::string &name, const std::string &description = "", const T &val = T())
+    ConfVar( std::string &name,  std::string &description = "", const T &val = T())
         : ConfVarBase(name, description), m_val(val) {}
 
     std::string toString() const override {
@@ -62,6 +65,7 @@ private:
 };
 
 class Config {
+    
 public:
     typedef std::map<std::string, ConfVarBase::ptr> confvarmap;
 
@@ -72,7 +76,7 @@ public:
             return nullptr;
         } else {
             // m_confmap 对应的值是 ConfVarBase::ptr，所以需要进行类型转换
-            return std::dynamic_pointer_cast<ConfVar<T>>(i->second);
+            return std::dynamic_pointer_cast<ConfVar<T> >(i->second);
         }
     }
 
@@ -96,16 +100,23 @@ public:
 
     static void tarvel() {
         for (const auto &x : Config::m_confmap) {
-            std::cout << "name: " << x.first << ", value: " << x.second->toString() << std::endl;
+            std::cout<< x.first << "--------" << x.second->toString() << std::endl;
         }
     }
+    static void LoadFromYaml(const YAML::Node & root);
+
+static void ListAllMember( std::string& prefix,
+                          const YAML::Node& node,
+                          std::list<std::pair<std::string, const YAML::Node> > & output) ;
+
+    ConfVarBase::ptr static LookUpBase(const std::string & name);
 
 private:
     static confvarmap m_confmap; 
 };
 
 // 静态变量的定义
-Config::confvarmap Config::m_confmap;
+
 
 #endif // _SM_CONF
 

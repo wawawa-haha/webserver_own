@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/root/code/sm_own/conf.cpp" "CMakeFiles/x.dir/conf.cpp.o" "gcc" "CMakeFiles/x.dir/conf.cpp.o.d"
   "/root/code/sm_own/test.cpp" "CMakeFiles/x.dir/test.cpp.o" "gcc" "CMakeFiles/x.dir/test.cpp.o.d"
   )
 
