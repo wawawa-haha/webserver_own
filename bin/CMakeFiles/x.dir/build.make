@@ -92,6 +92,7 @@ x_EXTERNAL_OBJECTS =
 
 x : CMakeFiles/x.dir/test.cpp.o
 x : CMakeFiles/x.dir/build.make
+x : /usr/local/lib64/libyaml-cpp.a
 x : CMakeFiles/x.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/code/sm_own/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable x"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/x.dir/link.txt --verbose=$(VERBOSE)

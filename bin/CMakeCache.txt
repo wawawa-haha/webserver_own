@@ -218,6 +218,9 @@ MyProject_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 MyProject_SOURCE_DIR:STATIC=/root/code/sm_own
 
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=/usr/local/lib64/cmake/yaml-cpp
+
 
 ########################
 # INTERNAL cache entries
