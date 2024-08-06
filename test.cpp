@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <yaml-cpp/yaml.h>
-#include "conf.h"
+#include "log.h"
 /*void print_yaml(const YAML::Node& node, int level) {
     std::string indent(level * 2, ' '); // 根据level生成缩进空格
 
@@ -26,9 +26,14 @@
 
 
 int main() {
-
-    YAML::Node root = YAML::LoadFile("/root/code/sm_own/conf.yaml");
-    Config::LoadFromYaml(root);
-    //Config::tarvel();
-    return 0;
+    //使用的时候首先初始化Logger，然后初始化LogAppender，然后初始化LogAppender的LogFormatter，然后调用Logger的Log方法即可
+    auto x = std::make_shared<sm::LogEvent>();
+    auto stdappender =  std::make_shared<sm::StdoutLogAppender>();
+    auto logger = std::make_shared<sm::Logger>(std::string("ascasc"));
+    auto formatter = std::make_shared<sm::LogFromatter>();
+    stdappender->setFormatter(formatter);
+    logger->addappender(stdappender);
+    logger->setlevel(sm::Level::DEBUG);
+    logger->Log(sm::Level::DEBUG,x);
+return 0;
 }

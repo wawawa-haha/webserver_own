@@ -129,29 +129,29 @@ x/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/build
 .PHONY : x/fast
 
-conf.o: conf.cpp.o
-.PHONY : conf.o
+log.o: log.cpp.o
+.PHONY : log.o
 
 # target to build an object file
-conf.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/conf.cpp.o
-.PHONY : conf.cpp.o
+log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/log.cpp.o
+.PHONY : log.cpp.o
 
-conf.i: conf.cpp.i
-.PHONY : conf.i
+log.i: log.cpp.i
+.PHONY : log.i
 
 # target to preprocess a source file
-conf.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/conf.cpp.i
-.PHONY : conf.cpp.i
+log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/log.cpp.i
+.PHONY : log.cpp.i
 
-conf.s: conf.cpp.s
-.PHONY : conf.s
+log.s: log.cpp.s
+.PHONY : log.s
 
 # target to generate assembly for a file
-conf.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/conf.cpp.s
-.PHONY : conf.cpp.s
+log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/log.cpp.s
+.PHONY : log.cpp.s
 
 test.o: test.cpp.o
 .PHONY : test.o
@@ -186,9 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... x"
-	@echo "... conf.o"
-	@echo "... conf.i"
-	@echo "... conf.s"
+	@echo "... log.o"
+	@echo "... log.i"
+	@echo "... log.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

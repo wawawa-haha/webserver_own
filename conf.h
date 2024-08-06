@@ -8,6 +8,14 @@
 #include <iostream>
 #include <map>
 #include <yaml-cpp/yaml.h>
+//基础类型的转换
+template<class from,class to>
+class basic_cast{
+    to operator(const from & v){
+        return boost::lexical_cast<to>(v);
+    }
+}
+
 // 定义好的基类
 class ConfVarBase {
 public:
@@ -33,7 +41,7 @@ protected:
     std::string m_description;
 };
 
-template <class T>
+/*template <class T>
 class ConfVar : public ConfVarBase {
 public:
     typedef std::shared_ptr<ConfVar> ptr;
@@ -60,6 +68,43 @@ public:
         return false;
     }
 
+private:
+    T m_val;
+};*/
+
+template <class T,class FromStr = basic_cast<std::string,T>,class ToStr = basic_cast<T,std::string> >
+class ConfVar : public ConfVarBase {
+public:
+    typedef std::shared_ptr<ConfVar> ptr;
+
+    ConfVar( std::string &name,  std::string &description = "", const T &val = T())
+        : ConfVarBase(name, description), m_val(val) {}
+
+    std::string toString() const override {
+        try {
+            //return boost::lexical_cast<std::string>(m_val);
+            return ToStr()(m_val);
+        } catch (const std::exception &e) {
+            std::cout << e.what() << " ConfVar 配置val异常" << std::endl;
+        }
+        return "";
+    }
+
+    bool fromString(const std::string &val) override {
+        try {
+            set_val(FromStr(val));
+            return true;
+        } catch (const std::exception &e) {
+            std::cout << e.what() << " ConfVar form string to val异常" << std::endl;
+        }
+        return false;
+    }
+    const T get_val() const {
+        return m_val;
+    }
+    void set_val(const T & v){
+        m_val = v;
+    }
 private:
     T m_val;
 };

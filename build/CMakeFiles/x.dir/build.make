@@ -83,30 +83,30 @@ CMakeFiles/x.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/test.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/test.cpp -o CMakeFiles/x.dir/test.cpp.s
 
-CMakeFiles/x.dir/conf.cpp.o: CMakeFiles/x.dir/flags.make
-CMakeFiles/x.dir/conf.cpp.o: ../conf.cpp
-CMakeFiles/x.dir/conf.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/x.dir/conf.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/conf.cpp.o -MF CMakeFiles/x.dir/conf.cpp.o.d -o CMakeFiles/x.dir/conf.cpp.o -c /root/code/sm_own/conf.cpp
+CMakeFiles/x.dir/log.cpp.o: CMakeFiles/x.dir/flags.make
+CMakeFiles/x.dir/log.cpp.o: ../log.cpp
+CMakeFiles/x.dir/log.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/x.dir/log.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/log.cpp.o -MF CMakeFiles/x.dir/log.cpp.o.d -o CMakeFiles/x.dir/log.cpp.o -c /root/code/sm_own/log.cpp
 
-CMakeFiles/x.dir/conf.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/x.dir/conf.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/sm_own/conf.cpp > CMakeFiles/x.dir/conf.cpp.i
+CMakeFiles/x.dir/log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/x.dir/log.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/sm_own/log.cpp > CMakeFiles/x.dir/log.cpp.i
 
-CMakeFiles/x.dir/conf.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/conf.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/conf.cpp -o CMakeFiles/x.dir/conf.cpp.s
+CMakeFiles/x.dir/log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/log.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/log.cpp -o CMakeFiles/x.dir/log.cpp.s
 
 # Object files for target x
 x_OBJECTS = \
 "CMakeFiles/x.dir/test.cpp.o" \
-"CMakeFiles/x.dir/conf.cpp.o"
+"CMakeFiles/x.dir/log.cpp.o"
 
 # External object files for target x
 x_EXTERNAL_OBJECTS =
 
 ../bin/x: CMakeFiles/x.dir/test.cpp.o
-../bin/x: CMakeFiles/x.dir/conf.cpp.o
+../bin/x: CMakeFiles/x.dir/log.cpp.o
 ../bin/x: CMakeFiles/x.dir/build.make
 ../bin/x: /usr/local/lib64/libyaml-cpp.a
 ../bin/x: CMakeFiles/x.dir/link.txt

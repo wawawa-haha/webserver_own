@@ -1,1 +1,1 @@
-/usr/bin/g++ CMakeFiles/x.dir/test.cpp.o CMakeFiles/x.dir/conf.cpp.o -o ../bin/x  /usr/local/lib64/libyaml-cpp.a 
+/usr/bin/g++ CMakeFiles/x.dir/test.cpp.o CMakeFiles/x.dir/log.cpp.o -o ../bin/x  /usr/local/lib64/libyaml-cpp.a 

@@ -18,7 +18,7 @@ include_directories(/usr/local/include/)
 find_package(yaml-cpp REQUIRED)
 
 # 添加可执行文件
-add_executable(x /root/code/sm_own/test.cpp /root/code/sm_own/conf.cpp)
+add_executable(x /root/code/sm_own/test.cpp /root/code/sm_own/log.cpp)
 
 
 target_link_libraries(x yaml-cpp)
