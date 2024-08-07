@@ -159,7 +159,15 @@ CMakeFiles/x.dir/log.cpp.o: ../log.cpp \
   /usr/include/c++/4.8.2/bits/codecvt.h \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
-  /usr/include/c++/4.8.2/bits/fstream.tcc
+  /usr/include/c++/4.8.2/bits/fstream.tcc \
+  /usr/include/c++/4.8.2/vector \
+  /usr/include/c++/4.8.2/bits/stl_vector.h \
+  /usr/include/c++/4.8.2/bits/stl_bvector.h \
+  /usr/include/c++/4.8.2/bits/vector.tcc \
+  /usr/include/c++/4.8.2/map \
+  /usr/include/c++/4.8.2/bits/stl_tree.h \
+  /usr/include/c++/4.8.2/bits/stl_map.h \
+  /usr/include/c++/4.8.2/bits/stl_multimap.h
 
 CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
   /usr/include/stdc-predef.h \
@@ -863,6 +871,22 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h:
 
+/usr/include/c++/4.8.2/bits/stream_iterator.h:
+
+/usr/include/c++/4.8.2/exception:
+
+/usr/include/c++/4.8.2/bits/stl_pair.h:
+
+/usr/include/c++/4.8.2/vector:
+
+/usr/include/bits/inf.h:
+
+/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h:
+
+/usr/include/c++/4.8.2/set:
+
+/usr/include/c++/4.8.2/bits/stl_vector.h:
+
 /usr/include/c++/4.8.2/cstdint:
 
 /usr/local/include/yaml-cpp/parser.h:
@@ -886,22 +910,6 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 /usr/include/bits/mathcalls.h:
 
 /usr/include/c++/4.8.2/cstddef:
-
-/usr/include/c++/4.8.2/bits/stream_iterator.h:
-
-/usr/include/c++/4.8.2/exception:
-
-/usr/include/c++/4.8.2/bits/stl_pair.h:
-
-/usr/include/c++/4.8.2/vector:
-
-/usr/include/bits/inf.h:
-
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h:
-
-/usr/include/c++/4.8.2/set:
-
-/usr/include/c++/4.8.2/bits/stl_vector.h:
 
 /usr/local/include/yaml-cpp/null.h:
 

@@ -116,4 +116,10 @@ CMakeFiles/x.dir/log.cpp.o: /root/code/sm_own/log.cpp \
  /usr/include/c++/4.8.2/bits/codecvt.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/4.8.2/bits/fstream.tcc
+ /usr/include/c++/4.8.2/bits/fstream.tcc /usr/include/c++/4.8.2/vector \
+ /usr/include/c++/4.8.2/bits/stl_vector.h \
+ /usr/include/c++/4.8.2/bits/stl_bvector.h \
+ /usr/include/c++/4.8.2/bits/vector.tcc /usr/include/c++/4.8.2/map \
+ /usr/include/c++/4.8.2/bits/stl_tree.h \
+ /usr/include/c++/4.8.2/bits/stl_map.h \
+ /usr/include/c++/4.8.2/bits/stl_multimap.h
