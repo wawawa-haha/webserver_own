@@ -15,7 +15,7 @@ LogEvent::LogEvent(const char * content,int line,const char* file):m_threadID(sm
     m_line = line;
     m_file = file;
 }*/
-Logger::Logger(const std::string & name):m_name(name),m_formatter(std::make_shared<LogFormatter>("%d{%Y-%m-%d %H:%M:%S}%T[%p]%T%t%T%F%T<%f%l>%T%m%n")){
+Logger::Logger(const std::string & name):m_name(name),m_formatter(std::make_shared<LogFormatter>("%d{%Y-%m-%d %H:%M:%S}%T%c%T[%p]%T%t%T%F%T<%f%l>%T%m%n")){
 }
 void Logger::Log(Level level,LogEvent::ptr event){
     //std::cout<<"Log cout begin"<<std::endl;
@@ -347,9 +347,9 @@ StdoutLogAppender::~StdoutLogAppender(){}
 
 FileLogAppender::~FileLogAppender(){m_filestream.close();}
 
-Logger_warp::Logger_warp(){
+Logger_warp::Logger_warp(const char * name){
     //std::cout<<"xxxxxxx"<<std::endl;
-    m_logger = std::make_shared<sm::Logger>("logger");
+    m_logger = std::make_shared<sm::Logger>(name);
 }
     void Logger_warp::addstdappender(){
         //std::cout<<"添加stdappender"<<std::endl;
@@ -366,5 +366,4 @@ Logger_warp::Logger_warp(){
     void Logger_warp::set_logger_level(Level level){
         m_logger->setlevel(level);
     }
-
 }

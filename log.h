@@ -141,9 +141,7 @@ private:
     std::string m_name;
     Level m_level;//日志器的日志级别,只有满足了日志级别的日志才输出
     LogFormatter::ptr m_formatter;
-public:
     std::list<LogAppender::ptr> m_appenders;//对于每个appender有相应的formatter
-
 };
 
 class StdoutLogAppender : public LogAppender{
@@ -169,7 +167,7 @@ private:
 };
 class Logger_warp{
 public:
-    Logger_warp();
+    Logger_warp(const char * name);
     void addstdappender();
     void addfileappender(const char * s);
     void set_logger_level(Level level);

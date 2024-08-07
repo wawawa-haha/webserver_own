@@ -1,3 +1,2 @@
-2024-08-07 18:15:51	[DEBUG]	26538	0	</root/code/sm_own/test.cpp9>	event01
-2024-08-07 18:15:51	[DEBUG]	26538	0	</root/code/sm_own/test.cpp10>	event02
-2024-08-07 18:15:51	[DEBUG]	26538	0	</root/code/sm_own/test.cpp11>	event03
+2024-08-07 18:28:41	logger_WARN	[FATAL]	27970	0	</root/code/sm_own/test.cpp20>	event02
+2024-08-07 18:28:41	logger_WARN	[WARN]	27970	0	</root/code/sm_own/test.cpp21>	event02
