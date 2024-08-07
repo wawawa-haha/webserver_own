@@ -1,1 +1,3 @@
-DEBUG	123	234	文件名	345::::------
+2024-08-07 18:15:51	[DEBUG]	26538	0	</root/code/sm_own/test.cpp9>	event01
+2024-08-07 18:15:51	[DEBUG]	26538	0	</root/code/sm_own/test.cpp10>	event02
+2024-08-07 18:15:51	[DEBUG]	26538	0	</root/code/sm_own/test.cpp11>	event03

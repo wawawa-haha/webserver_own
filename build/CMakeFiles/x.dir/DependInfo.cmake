@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/code/sm_own/log.cpp" "CMakeFiles/x.dir/log.cpp.o" "gcc" "CMakeFiles/x.dir/log.cpp.o.d"
   "/root/code/sm_own/test.cpp" "CMakeFiles/x.dir/test.cpp.o" "gcc" "CMakeFiles/x.dir/test.cpp.o.d"
+  "/root/code/sm_own/util.cpp" "CMakeFiles/x.dir/util.cpp.o" "gcc" "CMakeFiles/x.dir/util.cpp.o.d"
   )
 
 # Targets to which this target links.

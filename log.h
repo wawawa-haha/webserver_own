@@ -8,8 +8,15 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include <time.h>
+#include "util.h"
+
+#define CREATE_LOG_EVENT(content) std::make_shared<sm::LogEvent>(content, __LINE__, __FILE__)
+//#define CREATE_LOG_STD_APPENDER() std::make_shared<sm::StdoutLogAppender>()
+//#define CREATE_LOG_FILE_APPENDER(s) std::make_shared<sm::FileLogAppender>(s)
 
 namespace sm{
+
 class Logger;
 //每个日志出现，当作一个Logevent
 enum class Level{
@@ -45,23 +52,24 @@ public:
 class LogEvent{
 public:
     typedef std::shared_ptr<LogEvent> ptr;
-    LogEvent(){}
+
+    LogEvent(const char* content,int line, const char * file);
     const char* getfile() const {return m_file;}
     int32_t getline() const {return m_line;}
     uint32_t getelapse() const {return elapse;}
-    uint32_t getthreadid() const {return m_threadID;}
+    pid_t getthreadid() const {return m_threadID;}
     uint32_t getfiberID() const {return m_fiberID;}
     std::string getContent() const {return m_content;}
     uint64_t gettime()const{return m_time;}
 public:
     //与构造函数使用初始化成员列表一样
     const char* m_file = nullptr;
-    int32_t m_line = 0;
+    int m_line;
     uint32_t elapse = 0;
-    uint32_t m_threadID = 0;
+    pid_t m_threadID = 0;
     uint32_t m_fiberID = 0;
     uint64_t m_time;
-    std::string m_content ;
+    const char* m_content ;
 };
 
 //日志格式器
@@ -127,12 +135,14 @@ public:
     void setlevel(Level level){m_level = level;};
 
     const std::string& getName(){return m_name;}
+    int get_appendersize(){return m_appenders.size();}
     ~Logger() = default;
 private:
     std::string m_name;
     Level m_level;//日志器的日志级别,只有满足了日志级别的日志才输出
-
-    std::list<LogAppender::ptr> m_appenders;
+    LogFormatter::ptr m_formatter;
+public:
+    std::list<LogAppender::ptr> m_appenders;//对于每个appender有相应的formatter
 
 };
 
@@ -141,7 +151,7 @@ public:
     typedef std::shared_ptr<StdoutLogAppender> ptr;
     virtual void Log(std::shared_ptr<Logger> logger, Level level, LogEvent::ptr event) override;
     virtual ~StdoutLogAppender(); 
-    StdoutLogAppender(){}
+    StdoutLogAppender();
 private:
 };
 
@@ -149,13 +159,24 @@ class FileLogAppender : public LogAppender{
 public:
     typedef std::shared_ptr<FileLogAppender> ptr;
     
-    FileLogAppender(std::string & filename);
+    FileLogAppender(const char * filename);
     virtual void Log(std::shared_ptr<Logger> logger, Level level, LogEvent::ptr event) override;
     void open();
     virtual ~FileLogAppender();
 private:
     std::string m_filename;
     std::ofstream m_filestream;
+};
+class Logger_warp{
+public:
+    Logger_warp();
+    void addstdappender();
+    void addfileappender(const char * s);
+    void set_logger_level(Level level);
+    void log_cout(Level level,LogEvent::ptr event);
+    Logger::ptr get_logger(){return m_logger;}
+private:
+    Logger::ptr m_logger;
 };
 }
 #endif

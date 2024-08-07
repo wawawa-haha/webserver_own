@@ -164,10 +164,21 @@ CMakeFiles/x.dir/log.cpp.o: ../log.cpp \
   /usr/include/c++/4.8.2/bits/stl_vector.h \
   /usr/include/c++/4.8.2/bits/stl_bvector.h \
   /usr/include/c++/4.8.2/bits/vector.tcc \
+  ../util.h \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/getopt.h \
+  /usr/include/sys/syscall.h \
+  /usr/include/asm/unistd.h \
+  /usr/include/asm/unistd_64.h \
+  /usr/include/bits/syscall.h \
   /usr/include/c++/4.8.2/map \
   /usr/include/c++/4.8.2/bits/stl_tree.h \
   /usr/include/c++/4.8.2/bits/stl_map.h \
-  /usr/include/c++/4.8.2/bits/stl_multimap.h
+  /usr/include/c++/4.8.2/bits/stl_multimap.h \
+  /usr/include/c++/4.8.2/ctime
 
 CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
   /usr/include/stdc-predef.h \
@@ -418,7 +429,155 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
   /usr/local/include/yaml-cpp/node/detail/impl.h \
   /usr/local/include/yaml-cpp/node/parse.h \
   /usr/local/include/yaml-cpp/node/emit.h \
-  ../log.h
+  ../log.h \
+  ../util.h \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/getopt.h \
+  /usr/include/sys/syscall.h \
+  /usr/include/asm/unistd.h \
+  /usr/include/asm/unistd_64.h \
+  /usr/include/bits/syscall.h
+
+CMakeFiles/x.dir/util.cpp.o: ../util.cpp \
+  /usr/include/stdc-predef.h \
+  ../util.h \
+  /usr/include/pthread.h \
+  /usr/include/features.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/endian.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/byteswap-16.h \
+  /usr/include/sched.h \
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
+  /usr/include/time.h \
+  /usr/include/bits/sched.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/timex.h \
+  /usr/include/xlocale.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/c++/4.8.2/iostream \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
+  /usr/include/c++/4.8.2/ostream \
+  /usr/include/c++/4.8.2/ios \
+  /usr/include/c++/4.8.2/iosfwd \
+  /usr/include/c++/4.8.2/bits/stringfwd.h \
+  /usr/include/c++/4.8.2/bits/memoryfwd.h \
+  /usr/include/c++/4.8.2/bits/postypes.h \
+  /usr/include/c++/4.8.2/cwchar \
+  /usr/include/wchar.h \
+  /usr/include/stdio.h \
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/c++/4.8.2/exception \
+  /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/4.8.2/bits/exception_ptr.h \
+  /usr/include/c++/4.8.2/bits/exception_defines.h \
+  /usr/include/c++/4.8.2/bits/nested_exception.h \
+  /usr/include/c++/4.8.2/bits/char_traits.h \
+  /usr/include/c++/4.8.2/bits/stl_algobase.h \
+  /usr/include/c++/4.8.2/bits/functexcept.h \
+  /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
+  /usr/include/c++/4.8.2/ext/type_traits.h \
+  /usr/include/c++/4.8.2/ext/numeric_traits.h \
+  /usr/include/c++/4.8.2/bits/stl_pair.h \
+  /usr/include/c++/4.8.2/bits/move.h \
+  /usr/include/c++/4.8.2/bits/concept_check.h \
+  /usr/include/c++/4.8.2/type_traits \
+  /usr/include/c++/4.8.2/bits/stl_iterator_base_types.h \
+  /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/4.8.2/debug/debug.h \
+  /usr/include/c++/4.8.2/bits/stl_iterator.h \
+  /usr/include/c++/4.8.2/cstdint \
+  /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/c++/4.8.2/bits/localefwd.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
+  /usr/include/c++/4.8.2/clocale \
+  /usr/include/locale.h \
+  /usr/include/bits/locale.h \
+  /usr/include/c++/4.8.2/cctype \
+  /usr/include/ctype.h \
+  /usr/include/c++/4.8.2/bits/ios_base.h \
+  /usr/include/c++/4.8.2/ext/atomicity.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h \
+  /usr/include/c++/4.8.2/bits/locale_classes.h \
+  /usr/include/c++/4.8.2/string \
+  /usr/include/c++/4.8.2/bits/allocator.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h \
+  /usr/include/c++/4.8.2/ext/new_allocator.h \
+  /usr/include/c++/4.8.2/new \
+  /usr/include/c++/4.8.2/bits/ostream_insert.h \
+  /usr/include/c++/4.8.2/bits/cxxabi_forced.h \
+  /usr/include/c++/4.8.2/bits/stl_function.h \
+  /usr/include/c++/4.8.2/backward/binders.h \
+  /usr/include/c++/4.8.2/bits/range_access.h \
+  /usr/include/c++/4.8.2/bits/basic_string.h \
+  /usr/include/c++/4.8.2/initializer_list \
+  /usr/include/c++/4.8.2/ext/string_conversions.h \
+  /usr/include/c++/4.8.2/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/sys/types.h \
+  /usr/include/sys/select.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h \
+  /usr/include/sys/sysmacros.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/c++/4.8.2/cstdio \
+  /usr/include/libio.h \
+  /usr/include/_G_config.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/sys_errlist.h \
+  /usr/include/c++/4.8.2/cerrno \
+  /usr/include/errno.h \
+  /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/c++/4.8.2/bits/functional_hash.h \
+  /usr/include/c++/4.8.2/bits/hash_bytes.h \
+  /usr/include/c++/4.8.2/bits/basic_string.tcc \
+  /usr/include/c++/4.8.2/bits/locale_classes.tcc \
+  /usr/include/c++/4.8.2/streambuf \
+  /usr/include/c++/4.8.2/bits/streambuf.tcc \
+  /usr/include/c++/4.8.2/bits/basic_ios.h \
+  /usr/include/c++/4.8.2/bits/locale_facets.h \
+  /usr/include/c++/4.8.2/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_base.h \
+  /usr/include/c++/4.8.2/bits/streambuf_iterator.h \
+  /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h \
+  /usr/include/c++/4.8.2/bits/locale_facets.tcc \
+  /usr/include/c++/4.8.2/bits/basic_ios.tcc \
+  /usr/include/c++/4.8.2/bits/ostream.tcc \
+  /usr/include/c++/4.8.2/istream \
+  /usr/include/c++/4.8.2/bits/istream.tcc \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/getopt.h \
+  /usr/include/sys/syscall.h \
+  /usr/include/asm/unistd.h \
+  /usr/include/asm/unistd_64.h \
+  /usr/include/bits/syscall.h
 
 
 /usr/local/include/yaml-cpp/node/emit.h:
@@ -485,6 +644,14 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/local/include/yaml-cpp/node/ptr.h:
 
+/usr/local/include/yaml-cpp/node/node.h:
+
+/usr/local/include/yaml-cpp/mark.h:
+
+/usr/include/c++/4.8.2/bits/stl_set.h:
+
+/usr/local/include/yaml-cpp/ostream_wrapper.h:
+
 /usr/include/stdlib.h:
 
 /usr/include/bits/pthreadtypes.h:
@@ -523,8 +690,6 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/bits/hash_bytes.h:
 
-/usr/local/include/yaml-cpp/node/node.h:
-
 /usr/include/bits/types.h:
 
 /usr/include/c++/4.8.2/bits/hashtable.h:
@@ -539,8 +704,6 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/bits/stl_uninitialized.h:
 
-/usr/include/c++/4.8.2/iosfwd:
-
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h:
 
 /usr/include/c++/4.8.2/bits/unordered_map.h:
@@ -548,6 +711,8 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 /usr/include/locale.h:
 
 /usr/include/c++/4.8.2/clocale:
+
+/usr/include/bits/syscall.h:
 
 /usr/include/c++/4.8.2/bits/localefwd.h:
 
@@ -591,9 +756,9 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/bits/wchar.h:
 
-/usr/local/include/yaml-cpp/exceptions.h:
+/usr/local/include/yaml-cpp/noexcept.h:
 
-/usr/include/c++/4.8.2/bits/functexcept.h:
+/usr/include/gnu/stubs.h:
 
 /usr/include/c++/4.8.2/bits/stl_algobase.h:
 
@@ -612,6 +777,12 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 ../log.h:
 
 /usr/include/c++/4.8.2/bits/nested_exception.h:
+
+/usr/include/c++/4.8.2/set:
+
+/usr/include/bits/inf.h:
+
+/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h:
 
 /usr/include/c++/4.8.2/string:
 
@@ -632,6 +803,8 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 /usr/include/c++/4.8.2/ext/string_conversions.h:
 
 /usr/include/c++/4.8.2/list:
+
+/usr/include/sys/syscall.h:
 
 /usr/include/gnu/stubs-64.h:
 
@@ -727,9 +900,17 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/bits/sys_errlist.h:
 
+/usr/include/c++/4.8.2/ctime:
+
 /usr/include/c++/4.8.2/bits/fstream.tcc:
 
 /usr/include/c++/4.8.2/new:
+
+/usr/local/include/yaml-cpp/exceptions.h:
+
+/usr/include/c++/4.8.2/bits/functexcept.h:
+
+/usr/include/bits/posix_opt.h:
 
 /usr/include/c++/4.8.2/cerrno:
 
@@ -759,9 +940,9 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/local/include/yaml-cpp/node/detail/node.h:
 
-/usr/include/c++/4.8.2/bits/stl_bvector.h:
-
 /usr/local/include/yaml-cpp/emitterstyle.h:
+
+/usr/include/c++/4.8.2/bits/stl_bvector.h:
 
 /usr/include/stdint.h:
 
@@ -801,6 +982,8 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/bits/unique_ptr.h:
 
+../util.cpp:
+
 /usr/include/c++/4.8.2/limits:
 
 /usr/include/_G_config.h:
@@ -815,6 +998,8 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/bits/stl_list.h:
 
+/usr/include/asm/unistd_64.h:
+
 /usr/include/c++/4.8.2/bits/concept_check.h:
 
 /usr/include/c++/4.8.2/iostream:
@@ -825,13 +1010,19 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/ostream:
 
+/usr/include/getopt.h:
+
 /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/opt_random.h:
 
 /usr/include/c++/4.8.2/bits/locale_classes.h:
 
-/usr/include/libio.h:
+/usr/include/c++/4.8.2/iosfwd:
+
+/usr/include/bits/environments.h:
 
 /usr/local/include/yaml-cpp/stlemitter.h:
+
+/usr/include/libio.h:
 
 /usr/include/c++/4.8.2/streambuf:
 
@@ -879,13 +1070,13 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 
 /usr/include/c++/4.8.2/vector:
 
-/usr/include/bits/inf.h:
-
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h:
-
-/usr/include/c++/4.8.2/set:
-
 /usr/include/c++/4.8.2/bits/stl_vector.h:
+
+../util.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/confname.h:
 
 /usr/include/c++/4.8.2/cstdint:
 
@@ -898,6 +1089,8 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 /usr/local/include/yaml-cpp/emitter.h:
 
 /usr/include/c++/4.8.2/bits/valarray_array.tcc:
+
+/usr/include/asm/unistd.h:
 
 /usr/include/bits/nan.h:
 
@@ -912,13 +1105,3 @@ CMakeFiles/x.dir/test.cpp.o: ../test.cpp \
 /usr/include/c++/4.8.2/cstddef:
 
 /usr/local/include/yaml-cpp/null.h:
-
-/usr/local/include/yaml-cpp/ostream_wrapper.h:
-
-/usr/include/c++/4.8.2/bits/stl_set.h:
-
-/usr/local/include/yaml-cpp/mark.h:
-
-/usr/include/gnu/stubs.h:
-
-/usr/local/include/yaml-cpp/noexcept.h:
