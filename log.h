@@ -7,19 +7,52 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <vector>
+
 namespace sm{
+class Logger;
 //每个日志出现，当作一个Logevent
 enum class Level{
+
         DEBUG = 0,
         INFO = 1,
         WARN = 2,
         ERROR = 3,
         FATAL = 4
 };
+class LevelUtil {
+public:
+    static std::string toString(Level level) {
+        switch (level) {
+            case Level::DEBUG: return "DEBUG";
+            case Level::INFO: return "INFO";
+            case Level::WARN: return "WARN";
+            case Level::ERROR: return "ERROR";
+            case Level::FATAL: return "FATAL";
+            default: return "UNKNOWN";
+        }
+    }
+
+    static Level fromString(const std::string& str) {
+        if (str == "DEBUG") return Level::DEBUG;
+        if (str == "INFO") return Level::INFO;
+        if (str == "WARN") return Level::WARN;
+        if (str == "ERROR") return Level::ERROR;
+        if (str == "FATAL") return Level::FATAL;
+        throw std::invalid_argument("Unknown level string");
+    }
+};
 class LogEvent{
 public:
     typedef std::shared_ptr<LogEvent> ptr;
-    LogEvent() = default;
+    LogEvent(){}
+    const char* getfile() const {return m_file;}
+    int32_t getline() const {return m_line;}
+    uint32_t getelapse() const {return elapse;}
+    uint32_t getthreadid() const {return m_threadID;}
+    uint32_t getfiberID() const {return m_fiberID;}
+    std::string getContent() const {return m_content;}
+    uint64_t gettime()const{return m_time;}
 public:
     //与构造函数使用初始化成员列表一样
     const char* m_file = nullptr;
@@ -28,16 +61,29 @@ public:
     uint32_t m_threadID = 0;
     uint32_t m_fiberID = 0;
     uint64_t m_time;
-    std::string m_content;
+    std::string m_content ;
 };
 
 //日志格式器
-class LogFromatter{
+class LogFormatter{
 public:
-    typedef std::shared_ptr<LogFromatter> ptr;
-    std::string format(LogEvent::ptr event);
-    LogFromatter ()= default;
+    typedef std::shared_ptr<LogFormatter> ptr;
+    std::string format(std::shared_ptr<Logger> logger,Level level,LogEvent::ptr event);
+    LogFormatter (const std::string & pattern):m_pattern(pattern){init();}
+    
+    class FormatItem{
+        public:
+            typedef std::shared_ptr<FormatItem> ptr;
+            FormatItem(){}
+            virtual ~FormatItem();
+            virtual void format(std::shared_ptr<Logger> logger,std::ostream & s, Level level, LogEvent::ptr  event);
+    };
+    void init();//init the pattern  patternitem vec by the pattern string
 private:
+    bool m_error = true;
+    std::shared_ptr<Logger> logger;
+    std::string m_pattern;
+    std::vector<FormatItem::ptr> m_formatitems;
 };
 
 //日志输出地
@@ -45,27 +91,28 @@ private:
 class LogAppender{
 public:
     typedef std::shared_ptr<LogAppender> ptr;
-    virtual ~LogAppender() = default;
-    void virtual Log(Level level,LogEvent::ptr evtent) = 0;
-    void setFormatter (LogFromatter::ptr format){
+    LogAppender(){}
+    virtual ~LogAppender(){};
+    virtual void Log(std::shared_ptr<Logger> logger, Level level, LogEvent::ptr event){};
+    void setFormatter (LogFormatter::ptr format){
         m_formatter = format; 
     };
-    LogFromatter::ptr getFormatter() const {return m_formatter;};
+    LogFormatter::ptr getFormatter() const {return m_formatter;};
 protected:
-    LogFromatter::ptr m_formatter;//日志格式器   
+    LogFormatter::ptr m_formatter;//日志格式器   
     Level m_level;//输出哪些日志
 };
 
 
 //日志器
-class Logger{
+class Logger : public std::enable_shared_from_this<Logger>{
 public:
 
     typedef std::shared_ptr<Logger> ptr;
 
     Logger(const std::string & s);
 
-    void Log(Level level,LogEvent::ptr evtent);
+    void Log(Level level,LogEvent::ptr event);
 
     void debug(LogEvent::ptr event);
     void warn(LogEvent::ptr event);
@@ -79,11 +126,10 @@ public:
     const Level getlevel()const {return m_level;};
     void setlevel(Level level){m_level = level;};
 
+    const std::string& getName(){return m_name;}
     ~Logger() = default;
 private:
-
     std::string m_name;
-
     Level m_level;//日志器的日志级别,只有满足了日志级别的日志才输出
 
     std::list<LogAppender::ptr> m_appenders;
@@ -93,17 +139,19 @@ private:
 class StdoutLogAppender : public LogAppender{
 public:
     typedef std::shared_ptr<StdoutLogAppender> ptr;
-    void Log(Level level,LogEvent::ptr evtent) override;
+    virtual void Log(std::shared_ptr<Logger> logger, Level level, LogEvent::ptr event) override;
     virtual ~StdoutLogAppender(); 
-    StdoutLogAppender() = default;
+    StdoutLogAppender(){}
 private:
 };
+
 class FileLogAppender : public LogAppender{
 public:
     typedef std::shared_ptr<FileLogAppender> ptr;
+    
     FileLogAppender(std::string & filename);
-    void Log(Level level,LogEvent::ptr evtent) override;
-    bool reopen();
+    virtual void Log(std::shared_ptr<Logger> logger, Level level, LogEvent::ptr event) override;
+    void open();
     virtual ~FileLogAppender();
 private:
     std::string m_filename;
