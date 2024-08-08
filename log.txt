@@ -1,2 +1,2 @@
-2024-08-07 18:28:41	logger_WARN	[FATAL]	27970	0	</root/code/sm_own/test.cpp20>	event02
-2024-08-07 18:28:41	logger_WARN	[WARN]	27970	0	</root/code/sm_own/test.cpp21>	event02
+2024-08-07 18:33:22	logger_WARN	[FATAL]	28619	0	</root/code/sm_own/test.cpp20>	event02
+2024-08-07 18:33:22	logger_WARN	[WARN]	28619	0	</root/code/sm_own/test.cpp21>	event02

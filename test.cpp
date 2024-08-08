@@ -3,24 +3,15 @@
 #include <yaml-cpp/yaml.h>
 #include "log.h"
 #include "util.h"
-
-
+#include "config.h"
+#include "loggers.h"
 int main() {
-    auto log1 = sm::Logger_warp("logger_WARN");
-    auto log2 = sm::Logger_warp("logger_ERROR");
-    
-    log1.addstdappender();
-    log1.addfileappender("/root/code/sm_own/log.txt");
-
-    log2.addstdappender();
-    log2.addfileappender("/root/code/sm_own/log.txt");
-    
-    log1.set_logger_level(sm::Level:: WARN);
-    log2.set_logger_level(sm::Level:: ERROR);
-    log1.log_cout(sm::Level::DEBUG,CREATE_LOG_EVENT("event01"));
-    log1.log_cout(sm::Level::FATAL,CREATE_LOG_EVENT("event02"));
-    log1.log_cout(sm::Level::WARN,CREATE_LOG_EVENT("event02"));
-    log2.log_cout(sm::Level::DEBUG,CREATE_LOG_EVENT("event01"));
-    log2.log_cout(sm::Level::FATAL,CREATE_LOG_EVENT("event02"));
-    log2.log_cout(sm::Level::WARN,CREATE_LOG_EVENT("event02"));
+   INIT_LOGGERS_STDOUT();
+   loggersp::global_Warn_logger->addfileappender("/root/code/sm_own/Log_dir/log01.txt");
+   loggersp::global_Warn_logger->log_cout(sm::Level::FATAL,CREATE_LOG_EVENT("event02"));
+   loggersp::global_Error_logger->log_cout(sm::Level::WARN,CREATE_LOG_EVENT("event02"));
+   std::string ss = "*01";
+   sm::Config::ptr config = std::make_shared<sm::Config>();
+   config->lookup<int>(ss,1,ss);
+   config->lookup<int>(ss,1,ss);
 }

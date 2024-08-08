@@ -1,0 +1,1 @@
+2024-08-08 14:30:55	logger_ERROR	[FATAL]	25617	0	</root/code/sm_own/test.cpp27>	event02

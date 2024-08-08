@@ -20,7 +20,10 @@ find_package(yaml-cpp REQUIRED)
 # 添加可执行文件
 add_executable(x /root/code/sm_own/test.cpp 
                  /root/code/sm_own/log.cpp
-                 /root/code/sm_own/util.cpp )
+                 /root/code/sm_own/util.cpp
+                 /root/code/sm_own/loggers.cpp
+                 /root/code/sm_own/config.cpp 
+                  )
 
 
 target_link_libraries(x yaml-cpp)

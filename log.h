@@ -118,7 +118,7 @@ public:
 
     typedef std::shared_ptr<Logger> ptr;
 
-    Logger(const std::string & s);
+    Logger(const std::string & s,const char * format = "%d{%Y-%m-%d %H:%M:%S}%T%c%T[%p]%T%t%T%F%T<%f%l>%T%m%n");
 
     void Log(Level level,LogEvent::ptr event);
 
@@ -167,14 +167,16 @@ private:
 };
 class Logger_warp{
 public:
-    Logger_warp(const char * name);
+    typedef std::shared_ptr<Logger_warp> ptr;
+    Logger_warp(const char * name,const char * format,Level level);
     void addstdappender();
     void addfileappender(const char * s);
-    void set_logger_level(Level level);
     void log_cout(Level level,LogEvent::ptr event);
     Logger::ptr get_logger(){return m_logger;}
-private:
     Logger::ptr m_logger;
 };
 }
+
+
 #endif
+

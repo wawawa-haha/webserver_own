@@ -1,9 +1,7 @@
 #include"log.h"
 #include <map>
 #include <ctime>
-
 namespace sm{
-
 /*auto Globallogger = std::make_shared<sm::Logger>(std::string("logger"));//全局的logger
 void Log_level_cout(LogEvent::ptr event,Level level){
     Globallogger->log(level,ptr);
@@ -15,7 +13,7 @@ LogEvent::LogEvent(const char * content,int line,const char* file):m_threadID(sm
     m_line = line;
     m_file = file;
 }*/
-Logger::Logger(const std::string & name):m_name(name),m_formatter(std::make_shared<LogFormatter>("%d{%Y-%m-%d %H:%M:%S}%T%c%T[%p]%T%t%T%F%T<%f%l>%T%m%n")){
+Logger::Logger(const std::string & name,const char * format):m_name(name),m_formatter(std::make_shared<LogFormatter>(format)){
 }
 void Logger::Log(Level level,LogEvent::ptr event){
     //std::cout<<"Log cout begin"<<std::endl;
@@ -347,9 +345,10 @@ StdoutLogAppender::~StdoutLogAppender(){}
 
 FileLogAppender::~FileLogAppender(){m_filestream.close();}
 
-Logger_warp::Logger_warp(const char * name){
+Logger_warp::Logger_warp(const char * name,const char * format,Level level){
     //std::cout<<"xxxxxxx"<<std::endl;
-    m_logger = std::make_shared<sm::Logger>(name);
+    m_logger = std::make_shared<sm::Logger>(name,format);
+    m_logger->setlevel(level);
 }
     void Logger_warp::addstdappender(){
         //std::cout<<"添加stdappender"<<std::endl;
@@ -363,7 +362,7 @@ Logger_warp::Logger_warp(const char * name){
         //std::cout<<"logcout运行"<<std::endl;
         m_logger->Log(level,event);
     }
-    void Logger_warp::set_logger_level(Level level){
-        m_logger->setlevel(level);
-    }
+
 }
+
+
