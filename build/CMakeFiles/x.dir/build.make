@@ -69,24 +69,10 @@ include CMakeFiles/x.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/x.dir/flags.make
 
-CMakeFiles/x.dir/test.cpp.o: CMakeFiles/x.dir/flags.make
-CMakeFiles/x.dir/test.cpp.o: ../test.cpp
-CMakeFiles/x.dir/test.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/x.dir/test.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/test.cpp.o -MF CMakeFiles/x.dir/test.cpp.o.d -o CMakeFiles/x.dir/test.cpp.o -c /root/code/sm_own/test.cpp
-
-CMakeFiles/x.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/x.dir/test.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/sm_own/test.cpp > CMakeFiles/x.dir/test.cpp.i
-
-CMakeFiles/x.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/test.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/test.cpp -o CMakeFiles/x.dir/test.cpp.s
-
 CMakeFiles/x.dir/log.cpp.o: CMakeFiles/x.dir/flags.make
 CMakeFiles/x.dir/log.cpp.o: ../log.cpp
 CMakeFiles/x.dir/log.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/x.dir/log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/x.dir/log.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/log.cpp.o -MF CMakeFiles/x.dir/log.cpp.o.d -o CMakeFiles/x.dir/log.cpp.o -c /root/code/sm_own/log.cpp
 
 CMakeFiles/x.dir/log.cpp.i: cmake_force
@@ -97,24 +83,24 @@ CMakeFiles/x.dir/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/log.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/log.cpp -o CMakeFiles/x.dir/log.cpp.s
 
-CMakeFiles/x.dir/util.cpp.o: CMakeFiles/x.dir/flags.make
-CMakeFiles/x.dir/util.cpp.o: ../util.cpp
-CMakeFiles/x.dir/util.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/x.dir/util.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/util.cpp.o -MF CMakeFiles/x.dir/util.cpp.o.d -o CMakeFiles/x.dir/util.cpp.o -c /root/code/sm_own/util.cpp
+CMakeFiles/x.dir/test.cpp.o: CMakeFiles/x.dir/flags.make
+CMakeFiles/x.dir/test.cpp.o: ../test.cpp
+CMakeFiles/x.dir/test.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/x.dir/test.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/test.cpp.o -MF CMakeFiles/x.dir/test.cpp.o.d -o CMakeFiles/x.dir/test.cpp.o -c /root/code/sm_own/test.cpp
 
-CMakeFiles/x.dir/util.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/x.dir/util.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/sm_own/util.cpp > CMakeFiles/x.dir/util.cpp.i
+CMakeFiles/x.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/x.dir/test.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/sm_own/test.cpp > CMakeFiles/x.dir/test.cpp.i
 
-CMakeFiles/x.dir/util.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/util.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/util.cpp -o CMakeFiles/x.dir/util.cpp.s
+CMakeFiles/x.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/test.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/test.cpp -o CMakeFiles/x.dir/test.cpp.s
 
 CMakeFiles/x.dir/loggers.cpp.o: CMakeFiles/x.dir/flags.make
 CMakeFiles/x.dir/loggers.cpp.o: ../loggers.cpp
 CMakeFiles/x.dir/loggers.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/x.dir/loggers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/x.dir/loggers.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/loggers.cpp.o -MF CMakeFiles/x.dir/loggers.cpp.o.d -o CMakeFiles/x.dir/loggers.cpp.o -c /root/code/sm_own/loggers.cpp
 
 CMakeFiles/x.dir/loggers.cpp.i: cmake_force
@@ -124,6 +110,20 @@ CMakeFiles/x.dir/loggers.cpp.i: cmake_force
 CMakeFiles/x.dir/loggers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/loggers.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/loggers.cpp -o CMakeFiles/x.dir/loggers.cpp.s
+
+CMakeFiles/x.dir/util.cpp.o: CMakeFiles/x.dir/flags.make
+CMakeFiles/x.dir/util.cpp.o: ../util.cpp
+CMakeFiles/x.dir/util.cpp.o: CMakeFiles/x.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/x.dir/util.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/x.dir/util.cpp.o -MF CMakeFiles/x.dir/util.cpp.o.d -o CMakeFiles/x.dir/util.cpp.o -c /root/code/sm_own/util.cpp
+
+CMakeFiles/x.dir/util.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/x.dir/util.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/sm_own/util.cpp > CMakeFiles/x.dir/util.cpp.i
+
+CMakeFiles/x.dir/util.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/x.dir/util.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/sm_own/util.cpp -o CMakeFiles/x.dir/util.cpp.s
 
 CMakeFiles/x.dir/config.cpp.o: CMakeFiles/x.dir/flags.make
 CMakeFiles/x.dir/config.cpp.o: ../config.cpp
@@ -141,22 +141,21 @@ CMakeFiles/x.dir/config.cpp.s: cmake_force
 
 # Object files for target x
 x_OBJECTS = \
-"CMakeFiles/x.dir/test.cpp.o" \
 "CMakeFiles/x.dir/log.cpp.o" \
-"CMakeFiles/x.dir/util.cpp.o" \
+"CMakeFiles/x.dir/test.cpp.o" \
 "CMakeFiles/x.dir/loggers.cpp.o" \
+"CMakeFiles/x.dir/util.cpp.o" \
 "CMakeFiles/x.dir/config.cpp.o"
 
 # External object files for target x
 x_EXTERNAL_OBJECTS =
 
-../bin/x: CMakeFiles/x.dir/test.cpp.o
 ../bin/x: CMakeFiles/x.dir/log.cpp.o
-../bin/x: CMakeFiles/x.dir/util.cpp.o
+../bin/x: CMakeFiles/x.dir/test.cpp.o
 ../bin/x: CMakeFiles/x.dir/loggers.cpp.o
+../bin/x: CMakeFiles/x.dir/util.cpp.o
 ../bin/x: CMakeFiles/x.dir/config.cpp.o
 ../bin/x: CMakeFiles/x.dir/build.make
-../bin/x: /usr/local/lib64/libyaml-cpp.a
 ../bin/x: CMakeFiles/x.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/code/sm_own/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/x"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/x.dir/link.txt --verbose=$(VERBOSE)

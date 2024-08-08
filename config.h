@@ -5,14 +5,21 @@
 #include <boost/lexical_cast.hpp>
 #include <string>
 #include <map>
-#include "log.h"
+#include <yaml-cpp/yaml.h>
+#include <list>
+#include <algorithm>
 #include "loggers.h"
+#include "log.h"
+
+
 namespace sm{
 class ConfigVarBase{
 public:
     typedef std::shared_ptr<ConfigVarBase> ptr;
     ConfigVarBase(const std::string & name,const std::string & desc="")
-        :m_name(name),m_desc(desc){}
+        :m_name(name),m_desc(desc){
+            //std::transform(std::transform(name.begin(), name.end(), [](unsigned char c) { return std::tolower(c); }));
+        }
     virtual ~ConfigVarBase(){}
     const std::string& getName() const {return m_name;}
     const std::string& getDesc() const {return m_desc;}
@@ -87,9 +94,13 @@ public:
         }
         return std::dynamic_pointer_cast<ConfigVar<T> >(it->second);//找到的是configbarbase::ptr
     }
-
+    static void LoadFromYaml(const YAML::Node& root);
 private:
     static confmap s_confmap;
 };
+void flatten_Yaml(const std::string& perfix ,
+                const YAML::Node& node,
+                std::list<std::pair<std::string , const YAML::Node> >& output 
+);
 }
 #endif

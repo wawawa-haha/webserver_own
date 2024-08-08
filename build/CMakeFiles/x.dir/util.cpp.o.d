@@ -93,4 +93,105 @@ CMakeFiles/x.dir/util.cpp.o: /root/code/sm_own/util.cpp \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
- /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h
+ /usr/include/asm/unistd_64.h /usr/include/bits/syscall.h \
+ /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
+ /usr/include/c++/4.8.2/memory \
+ /usr/include/c++/4.8.2/bits/stl_construct.h \
+ /usr/include/c++/4.8.2/ext/alloc_traits.h \
+ /usr/include/c++/4.8.2/bits/alloc_traits.h \
+ /usr/include/c++/4.8.2/bits/ptr_traits.h \
+ /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8.2/bits/stl_tempbuf.h \
+ /usr/include/c++/4.8.2/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/4.8.2/typeinfo /usr/include/c++/4.8.2/ext/concurrence.h \
+ /usr/include/c++/4.8.2/bits/uses_allocator.h \
+ /usr/include/c++/4.8.2/functional /usr/include/c++/4.8.2/tuple \
+ /usr/include/c++/4.8.2/utility /usr/include/c++/4.8.2/bits/stl_relops.h \
+ /usr/include/c++/4.8.2/array /usr/include/c++/4.8.2/stdexcept \
+ /usr/include/c++/4.8.2/bits/unique_ptr.h \
+ /usr/include/c++/4.8.2/bits/shared_ptr.h \
+ /usr/include/c++/4.8.2/bits/shared_ptr_base.h \
+ /usr/include/c++/4.8.2/backward/auto_ptr.h \
+ /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
+ /usr/include/c++/4.8.2/cmath /usr/include/math.h \
+ /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
+ /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
+ /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
+ /usr/include/bits/mathcalls.h /usr/include/c++/4.8.2/cstddef \
+ /usr/include/c++/4.8.2/limits /usr/include/c++/4.8.2/sstream \
+ /usr/include/c++/4.8.2/bits/sstream.tcc \
+ /usr/local/include/yaml-cpp/binary.h /usr/include/c++/4.8.2/vector \
+ /usr/include/c++/4.8.2/bits/stl_vector.h \
+ /usr/include/c++/4.8.2/bits/stl_bvector.h \
+ /usr/include/c++/4.8.2/bits/vector.tcc \
+ /usr/local/include/yaml-cpp/emitterdef.h \
+ /usr/local/include/yaml-cpp/emittermanip.h \
+ /usr/local/include/yaml-cpp/null.h \
+ /usr/local/include/yaml-cpp/ostream_wrapper.h \
+ /usr/local/include/yaml-cpp/emitterstyle.h \
+ /usr/local/include/yaml-cpp/stlemitter.h /usr/include/c++/4.8.2/list \
+ /usr/include/c++/4.8.2/bits/stl_list.h \
+ /usr/include/c++/4.8.2/bits/list.tcc /usr/include/c++/4.8.2/set \
+ /usr/include/c++/4.8.2/bits/stl_tree.h \
+ /usr/include/c++/4.8.2/bits/stl_set.h \
+ /usr/include/c++/4.8.2/bits/stl_multiset.h /usr/include/c++/4.8.2/map \
+ /usr/include/c++/4.8.2/bits/stl_map.h \
+ /usr/include/c++/4.8.2/bits/stl_multimap.h \
+ /usr/local/include/yaml-cpp/exceptions.h \
+ /usr/local/include/yaml-cpp/mark.h \
+ /usr/local/include/yaml-cpp/noexcept.h \
+ /usr/local/include/yaml-cpp/traits.h \
+ /usr/local/include/yaml-cpp/node/node.h \
+ /usr/local/include/yaml-cpp/node/detail/iterator_fwd.h \
+ /usr/local/include/yaml-cpp/node/ptr.h \
+ /usr/local/include/yaml-cpp/node/type.h \
+ /usr/local/include/yaml-cpp/node/impl.h \
+ /usr/local/include/yaml-cpp/node/detail/memory.h \
+ /usr/local/include/yaml-cpp/node/detail/node.h \
+ /usr/local/include/yaml-cpp/node/detail/node_ref.h \
+ /usr/local/include/yaml-cpp/node/detail/node_data.h \
+ /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
+ /usr/include/c++/4.8.2/iterator \
+ /usr/include/c++/4.8.2/bits/stream_iterator.h \
+ /usr/local/include/yaml-cpp/node/iterator.h \
+ /usr/local/include/yaml-cpp/node/detail/iterator.h \
+ /usr/include/c++/4.8.2/atomic /usr/include/c++/4.8.2/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdbool.h \
+ /usr/local/include/yaml-cpp/node/convert.h \
+ /usr/include/c++/4.8.2/unordered_map \
+ /usr/include/c++/4.8.2/bits/hashtable.h \
+ /usr/include/c++/4.8.2/bits/hashtable_policy.h \
+ /usr/include/c++/4.8.2/bits/unordered_map.h \
+ /usr/include/c++/4.8.2/valarray /usr/include/c++/4.8.2/algorithm \
+ /usr/include/c++/4.8.2/bits/stl_algo.h \
+ /usr/include/c++/4.8.2/bits/algorithmfwd.h \
+ /usr/include/c++/4.8.2/bits/stl_heap.h /usr/include/c++/4.8.2/random \
+ /usr/include/c++/4.8.2/bits/random.h \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/opt_random.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/ia32intrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/immintrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/fxsrintrin.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/adxintrin.h \
+ /usr/include/c++/4.8.2/bits/random.tcc /usr/include/c++/4.8.2/numeric \
+ /usr/include/c++/4.8.2/bits/stl_numeric.h \
+ /usr/include/c++/4.8.2/bits/valarray_array.h \
+ /usr/include/c++/4.8.2/bits/valarray_array.tcc \
+ /usr/include/c++/4.8.2/bits/valarray_before.h \
+ /usr/include/c++/4.8.2/bits/slice_array.h \
+ /usr/include/c++/4.8.2/bits/valarray_after.h \
+ /usr/include/c++/4.8.2/bits/gslice.h \
+ /usr/include/c++/4.8.2/bits/gslice_array.h \
+ /usr/include/c++/4.8.2/bits/mask_array.h \
+ /usr/include/c++/4.8.2/bits/indirect_array.h \
+ /usr/local/include/yaml-cpp/node/detail/impl.h \
+ /usr/local/include/yaml-cpp/node/parse.h \
+ /usr/local/include/yaml-cpp/node/emit.h /root/code/sm_own/log.h \
+ /usr/include/c++/4.8.2/fstream /usr/include/c++/4.8.2/bits/codecvt.h \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/4.8.2/bits/fstream.tcc /root/code/sm_own/loggers.h

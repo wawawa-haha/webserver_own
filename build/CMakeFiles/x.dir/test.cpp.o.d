@@ -191,8 +191,8 @@ CMakeFiles/x.dir/test.cpp.o: /root/code/sm_own/test.cpp \
  /usr/include/c++/4.8.2/bits/indirect_array.h \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
- /usr/local/include/yaml-cpp/node/emit.h /root/code/sm_own/log.h \
- /root/code/sm_own/util.h /usr/include/unistd.h \
+ /usr/local/include/yaml-cpp/node/emit.h /root/code/sm_own/loggers.h \
+ /root/code/sm_own/log.h /root/code/sm_own/util.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
  /usr/include/sys/syscall.h /usr/include/asm/unistd.h \
@@ -667,5 +667,4 @@ CMakeFiles/x.dir/test.cpp.o: /root/code/sm_own/test.cpp \
  /usr/include/boost/range/value_type.hpp \
  /usr/include/boost/range/detail/misc_concept.hpp \
  /usr/include/boost/range/detail/safe_bool.hpp \
- /usr/include/boost/container/container_fwd.hpp \
- /root/code/sm_own/loggers.h
+ /usr/include/boost/container/container_fwd.hpp
