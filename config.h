@@ -30,7 +30,52 @@ protected:
     std::string m_desc;
 };
 
+template<class F,class T>
+class lexiCast{
+public:
+    T operator()(const F& val){
+        return boost::lexical_cast<T>(val);
+    }
+};
+
+
 template<class T>
+class lexiCast<std::string,std::vector<T> >{
+public:
+    std::vector<T> operator()(const std::string& val){
+        std::cout<<"******"<<std::endl;
+        typename std::vector<T> v;
+        YAML::Node node = YAML::Load(val);
+        std::stringstream ss;
+        for(int i = 0;i<node.size();i++){
+            ss.str("");
+            ss<< node[i];
+            v.push_back(lexiCast<std::string,T>()(ss.str()));
+        }
+        return v;
+    }
+};
+
+template<class T>
+class lexiCast<std::vector<T>,std::string>{
+public:
+    std::string operator()(std::vector<T>& val){
+        std::stringstream ss;
+        for(int i = 0; i < val.size();i++){
+            if(i == 0){
+                ss<<val[i];
+            }else{
+                ss<<','<<val[i];
+            }
+        }
+        return ss.str();
+    }
+};
+
+
+
+
+template<class T,class FromString = lexiCast<std::string,T>,class ToString = lexiCast<T,std::string> >
 class ConfigVar : public ConfigVarBase {
 public:
     typedef std::shared_ptr<ConfigVar<T> > ptr; 
@@ -43,24 +88,30 @@ public:
     ~ConfigVar(){}
     std::string toString() override{
         try{
-            std::cout<<"tostring begin"<<std::endl;
-            return boost::lexical_cast<std::string>(m_val);
+            //std::cout<<"tostring begin"<<std::endl;
+            return ToString()(m_val);
+            //return boost::lexical_cast<std::string>(m_val);
         }catch(std::exception& e){
             loggersp::global_Error_logger->log_cout(sm::Level::ERROR,CREATE_LOG_EVENT("can not tran from configvar_val to string"));
         }
     }
+
     bool fromString(const std::string & val) override{
         try{
-            m_val = boost::lexical_cast<T>(val);
+            std::cout<<"开始fromstring"<<std::endl;
+            m_val = FromString()(val);
+           // m_val = boost::lexical_cast<T>(val);
             return true;
         }catch(std::exception& e){
             loggersp::global_Error_logger->log_cout(sm::Level::ERROR,CREATE_LOG_EVENT("can not tran from string to configvar_val"));
         }
         return false;
     }
+
 private:
     T m_val;
 };
+
 class Config{
 public:
     typedef std::shared_ptr<Config> ptr;
@@ -69,19 +120,20 @@ public:
     Config(){}
 
     //创建用lookup
+
     template<class T> 
     static typename ConfigVar<T>::ptr lookup(const std::string& name,
                                             const T& val,
                                             const std::string& desc)
     {
-        std::cout<<"looup begin " << val << std::endl;
+        //std::cout <<"looup begin " << val << std::endl;
         auto tmp = lookup<T>(name);
         if(tmp == nullptr){
             if(name.find_first_not_of("qwertyuiopasdfghjklzxcvbnm.1234567890[]")!=std::string::npos){
                  loggersp::global_Error_logger->log_cout(sm::Level::ERROR,CREATE_LOG_EVENT("config name is invalid"));
                  throw std::invalid_argument(name);
             }
-            auto confval = std::make_shared<ConfigVar<T> >(name,val,desc);
+            auto confval = std::make_shared<ConfigVar<T>>(name,val,desc);
             s_confmap[name] = confval;
         }else{
             loggersp::global_Info_logger->log_cout(sm::Level::INFO,CREATE_LOG_EVENT("in config map ,name-configvar_base has exit "));
@@ -89,7 +141,7 @@ public:
         }
     }
 
-    //查找用
+    //调用时必须显式给出T的类型
     template<class T> 
     static typename ConfigVar<T>::ptr lookup(const std::string& name){
         auto it  = s_confmap.find(name);
@@ -107,6 +159,7 @@ public:
 private:
     static confmap s_confmap;
 };
+
 void flatten_Yaml(const std::string& perfix ,
                 const YAML::Node& node,
                 std::list<std::pair<std::string , const YAML::Node> >& output 

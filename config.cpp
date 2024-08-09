@@ -30,14 +30,18 @@ ConfigVarBase::ptr Config::LookupBase(std::string &name){
     return it == s_confmap.end() ? nullptr : it->second;
 }
 void Config::LoadFormYaml(const YAML::Node& root){
+    
     std::list<std::pair<std::string , const YAML::Node> > temlist;
     flatten_Yaml("",root,temlist);
     for(auto i :temlist){
+
         auto key = i.first;
+
         if(key.empty()||key[key.size()-1] == ']'){
             continue;
         }
         auto congbaseptr = LookupBase(key);
+
         if(congbaseptr){
             if(i.second.IsScalar()){
                 congbaseptr->fromString(i.second.Scalar());

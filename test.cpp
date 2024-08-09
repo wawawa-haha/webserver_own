@@ -37,25 +37,28 @@ void printyaml(const YAML::Node& node ,int level){
    }
 }
 int main() {
-   sm::Config::lookup<int>("port",8080,"the port number");
-   sm::Config::lookup<std::string>("logs[0].name","tem","logger 01 name");
-   //loggersp::global_Info_logger->addstdappender();
-   //loggersp::global_Info_logger->addfileappender("/root/code/sm_own/Log_dir/log_01.txt");
+   sm::Config::lookup("port",(int)8080,"the port number");
+   sm::Config::lookup("floatxx",(float)123.456,"logger 01 name");
+   sm::Config::lookup("vec",(std::vector<int>){0},"logger 01 name");
+   loggersp::global_Info_logger->addstdappender();
+   loggersp::global_Info_logger->addfileappender("/root/code/sm_own/Log_dir/log_01.txt");
    YAML::Node root = test_yaml("/root/code/sm_own/conf/conf.yaml");
    sm::Config::LoadFormYaml(root);
-   std::cout<<sm::Config::getconfsize()<<std::endl;
+   printyaml(root ,0);
    /*loggersp::global_Warn_logger->addfileappender("/root/code/sm_own/Log_dir/log01.txt");
    loggersp::global_Warn_logger->addstdappender();
    loggersp::global_Warn_logger->log_cout(sm::Level::FATAL,CREATE_LOG_EVENT("event02"));
    loggersp::global_Error_logger->log_cout(sm::Level::WARN,CREATE_LOG_EVENT("event02"));*/
-   auto tem = sm::Config::lookup<int>("port");
+   auto tem = sm::Config::lookup<int>("port");//一个
    std::cout<<tem->toString()<<std::endl;
 
-   auto tem2 = sm::Config::lookup<std::string>("logs[0].name");
-   //std::cout<<tem2;
+   auto tem2 = sm::Config::lookup<float>("floatxx");
    std::cout<<tem2->toString()<<std::endl;
 
+   auto tem3 = sm::Config::lookup<std::vector<int> >("vec");
+   std::cout<<tem3->toString()<<std::endl;
    //YAML::Node tem = test_yaml("/root/code/sm_own/conf/conf.yaml");
    //sm::Config::LoadFormYaml(tem);
    //std::cout<<sm::Config::getconfsize()<<std::endl;
+
 }
