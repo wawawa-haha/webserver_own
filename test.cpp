@@ -10,7 +10,6 @@ YAML::Node test_yaml(char const * filename){
    return root;
 }
 void printyaml(const YAML::Node& node ,int level){
-   std::cout<<"*******"<<std::endl;
    if(node.IsScalar()){
       std::stringstream ss;
       ss  << std::string(level*4,' ')<<node.Scalar() << '-' << node.Type() << '-' <<level;
@@ -38,19 +37,25 @@ void printyaml(const YAML::Node& node ,int level){
    }
 }
 int main() {
-   
-   loggersp::global_Info_logger->addfileappender("/root/code/sm_own/Log_dir/log_01.txt");
-   YAML::Node tem = test_yaml("/root/code/sm_own/conf/conf.yaml");
-   std::list<std::pair<std::string , const YAML::Node> >temlist;
-   std::string s = "";
-   sm::flatten_Yaml(s,tem,temlist);
-   for(auto x:temlist){
-      std::cout<<x.first<<std::endl;
-   }
-   //printyaml(tem,0);
-   return 0;
+   sm::Config::lookup<int>("port",8080,"the port number");
+   sm::Config::lookup<std::string>("logs[0].name","tem","logger 01 name");
+   //loggersp::global_Info_logger->addstdappender();
+   //loggersp::global_Info_logger->addfileappender("/root/code/sm_own/Log_dir/log_01.txt");
+   YAML::Node root = test_yaml("/root/code/sm_own/conf/conf.yaml");
+   sm::Config::LoadFormYaml(root);
+   std::cout<<sm::Config::getconfsize()<<std::endl;
    /*loggersp::global_Warn_logger->addfileappender("/root/code/sm_own/Log_dir/log01.txt");
    loggersp::global_Warn_logger->addstdappender();
    loggersp::global_Warn_logger->log_cout(sm::Level::FATAL,CREATE_LOG_EVENT("event02"));
    loggersp::global_Error_logger->log_cout(sm::Level::WARN,CREATE_LOG_EVENT("event02"));*/
+   auto tem = sm::Config::lookup<int>("port");
+   std::cout<<tem->toString()<<std::endl;
+
+   auto tem2 = sm::Config::lookup<std::string>("logs[0].name");
+   //std::cout<<tem2;
+   std::cout<<tem2->toString()<<std::endl;
+
+   //YAML::Node tem = test_yaml("/root/code/sm_own/conf/conf.yaml");
+   //sm::Config::LoadFormYaml(tem);
+   //std::cout<<sm::Config::getconfsize()<<std::endl;
 }

@@ -129,6 +129,78 @@ x/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/build
 .PHONY : x/fast
 
+config.o: config.cpp.o
+.PHONY : config.o
+
+# target to build an object file
+config.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/config.cpp.o
+.PHONY : config.cpp.o
+
+config.i: config.cpp.i
+.PHONY : config.i
+
+# target to preprocess a source file
+config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/config.cpp.i
+.PHONY : config.cpp.i
+
+config.s: config.cpp.s
+.PHONY : config.s
+
+# target to generate assembly for a file
+config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/config.cpp.s
+.PHONY : config.cpp.s
+
+log.o: log.cpp.o
+.PHONY : log.o
+
+# target to build an object file
+log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/log.cpp.o
+.PHONY : log.cpp.o
+
+log.i: log.cpp.i
+.PHONY : log.i
+
+# target to preprocess a source file
+log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/log.cpp.i
+.PHONY : log.cpp.i
+
+log.s: log.cpp.s
+.PHONY : log.s
+
+# target to generate assembly for a file
+log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/log.cpp.s
+.PHONY : log.cpp.s
+
+loggers.o: loggers.cpp.o
+.PHONY : loggers.o
+
+# target to build an object file
+loggers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/loggers.cpp.o
+.PHONY : loggers.cpp.o
+
+loggers.i: loggers.cpp.i
+.PHONY : loggers.i
+
+# target to preprocess a source file
+loggers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/loggers.cpp.i
+.PHONY : loggers.cpp.i
+
+loggers.s: loggers.cpp.s
+.PHONY : loggers.s
+
+# target to generate assembly for a file
+loggers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/loggers.cpp.s
+.PHONY : loggers.cpp.s
+
 test.o: test.cpp.o
 .PHONY : test.o
 
@@ -153,6 +225,30 @@ test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+util.o: util.cpp.o
+.PHONY : util.o
+
+# target to build an object file
+util.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/util.cpp.o
+.PHONY : util.cpp.o
+
+util.i: util.cpp.i
+.PHONY : util.i
+
+# target to preprocess a source file
+util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/util.cpp.i
+.PHONY : util.cpp.i
+
+util.s: util.cpp.s
+.PHONY : util.s
+
+# target to generate assembly for a file
+util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/x.dir/build.make CMakeFiles/x.dir/util.cpp.s
+.PHONY : util.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... x"
+	@echo "... config.o"
+	@echo "... config.i"
+	@echo "... config.s"
+	@echo "... log.o"
+	@echo "... log.i"
+	@echo "... log.s"
+	@echo "... loggers.o"
+	@echo "... loggers.i"
+	@echo "... loggers.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... util.o"
+	@echo "... util.i"
+	@echo "... util.s"
 .PHONY : help
 
 

@@ -43,6 +43,7 @@ public:
     ~ConfigVar(){}
     std::string toString() override{
         try{
+            std::cout<<"tostring begin"<<std::endl;
             return boost::lexical_cast<std::string>(m_val);
         }catch(std::exception& e){
             loggersp::global_Error_logger->log_cout(sm::Level::ERROR,CREATE_LOG_EVENT("can not tran from configvar_val to string"));
@@ -64,16 +65,19 @@ class Config{
 public:
     typedef std::shared_ptr<Config> ptr;
     typedef std::map<std::string,ConfigVarBase::ptr> confmap;
+    
     Config(){}
+
     //创建用lookup
     template<class T> 
     static typename ConfigVar<T>::ptr lookup(const std::string& name,
                                             const T& val,
                                             const std::string& desc)
     {
+        std::cout<<"looup begin " << val << std::endl;
         auto tmp = lookup<T>(name);
         if(tmp == nullptr){
-            if(name.find_first_not_of("qwertyuiopasdfghjklzxcvbnm.1234567890")!=std::string::npos){
+            if(name.find_first_not_of("qwertyuiopasdfghjklzxcvbnm.1234567890[]")!=std::string::npos){
                  loggersp::global_Error_logger->log_cout(sm::Level::ERROR,CREATE_LOG_EVENT("config name is invalid"));
                  throw std::invalid_argument(name);
             }
@@ -94,7 +98,12 @@ public:
         }
         return std::dynamic_pointer_cast<ConfigVar<T> >(it->second);//找到的是configbarbase::ptr
     }
-    static void LoadFromYaml(const YAML::Node& root);
+
+    static void LoadFormYaml(const YAML::Node& root);
+
+    static ConfigVarBase::ptr LookupBase(std::string &name);
+
+    static int getconfsize(){return s_confmap.size();}
 private:
     static confmap s_confmap;
 };

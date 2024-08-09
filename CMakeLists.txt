@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 include_directories(/root/code/sm_own)
 
 include_directories(/usr/include)
