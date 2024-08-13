@@ -8,6 +8,12 @@
 #include <yaml-cpp/yaml.h>
 #include <list>
 #include <algorithm>
+#include <vector>
+#include <map>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
+#include <list>
 #include "loggers.h"
 #include "log.h"
 
@@ -43,7 +49,6 @@ template<class T>
 class lexiCast<std::string,std::vector<T> >{
 public:
     std::vector<T> operator()(const std::string& val){
-        std::cout<<"******"<<std::endl;
         typename std::vector<T> v;
         YAML::Node node = YAML::Load(val);
         std::stringstream ss;
@@ -72,9 +77,177 @@ public:
     }
 };
 
+template<class T>
+class lexiCast<std::string,std::list<T> >{
+public:
+    std::list<T> operator()(const std::string& val){
+        typename std::list<T> v;
+        YAML::Node node = YAML::Load(val);
+        std::stringstream ss;
+        for(int i = 0;i<node.size();i++){
+            ss.str("");
+            ss<< node[i];
+            v.push_back(lexiCast<std::string,T>()(ss.str()));
+        }
+        return v;
+    }
+};
+
+template<class T>
+class lexiCast<std::list<T>,std::string>{
+public:
+    std::string operator()(std::list<T>& val){
+        std::stringstream ss;
+        for(auto x = val.begin();x!=val.end();x++){
+            if(x == val.begin()){
+                ss<<(*x);
+            }else{
+                ss<<','<<(*x);
+            }
+        }
+        return ss.str();
+    }
+};
 
 
 
+template<class T>
+class lexiCast<std::string,std::set<T> >{
+public:
+    std::set<T> operator()(const std::string& val){
+        typename std::set<T> v;
+        YAML::Node node = YAML::Load(val);
+        std::stringstream ss;
+        for(int i = 0;i<node.size();i++){
+            ss.str("");
+            ss<< node[i];
+            v.insert(lexiCast<std::string,T>()(ss.str()));
+        }
+        return v;
+    }
+};
+
+template<class T>
+class lexiCast<std::set<T>,std::string>{
+public:
+    std::string operator()(std::set<T>& val){
+        std::stringstream ss;
+        for(auto x = val.begin();x!=val.end();x++){
+            if(x == val.begin()){
+                ss<<(*x);
+            }else{
+                ss<<','<<(*x);
+            }
+        }
+        return ss.str();
+    }
+};
+
+
+template<class T>
+class lexiCast<std::string,std::unordered_set<T> >{
+public:
+    std::unordered_set<T> operator()(const std::string& val){
+        typename std::unordered_set<T> v;
+        YAML::Node node = YAML::Load(val);
+        std::stringstream ss;
+        for(int i = 0;i<node.size();i++){
+            ss.str("");
+            ss<< node[i];
+            v.insert(lexiCast<std::string,T>()(ss.str()));
+        }
+        return v;
+    }
+};
+
+template<class T>
+class lexiCast<std::unordered_set<T>,std::string>{
+public:
+    std::string operator()(std::unordered_set<T>& val){
+        std::stringstream ss;
+        for(auto x = val.begin();x!=val.end();x++){
+            if(x == val.begin()){
+                ss<<(*x);
+            }else{
+                ss<<','<<(*x);
+            }
+        }
+        return ss.str();
+    }
+};
+
+
+template<class T>
+class lexiCast<std::string,std::unordered_map<std::string,T> >{
+public:
+    std::unordered_map<std::string,T> operator()(const std::string& val){
+        std::cout<<"****----"<<std::endl;
+        std::unordered_map<std::string ,T> v;
+        YAML::Node node = YAML::Load(val);
+        std::stringstream ss;
+        for(auto x = node.begin();
+            x!=node.end();
+            x++){
+            ss.str("");
+            ss.clear();
+            ss<< (x->second);
+            v.insert(std::make_pair(x->first.Scalar(),lexiCast<std::string,T>()(ss.str())));
+        }
+        return v;
+    }
+};
+
+template<class T>
+class lexiCast<std::unordered_map<std::string,T>,std::string>{
+public:
+    std::string operator()(std::unordered_map<std::string,T>& val){
+        std::stringstream ss;
+        for(auto x = val.begin();x!=val.end();x++){
+            if(x == val.begin()){
+                ss<<(x->first) << ':'<<(x->second);
+            }else{
+                ss<<','<<(x->first) << ':'<<(x->second);
+            }
+        }
+        return ss.str();
+    }
+};
+
+
+template<class T>
+class lexiCast<std::string,std::map<std::string,T> >{
+public:
+    std::map<std::string,T> operator()(const std::string& val){
+        std::map<std::string ,T> v;
+        YAML::Node node = YAML::Load(val);
+        std::stringstream ss;
+        for(auto x = node.begin();
+            x!=node.end();
+            x++){
+            ss.str("");
+            ss.clear();
+            ss<< (x->second);
+            v.insert(std::make_pair(x->first.Scalar(),lexiCast<std::string,T>()(ss.str())));
+        }
+        return v;
+    }
+};
+
+template<class T>
+class lexiCast<std::map<std::string,T>,std::string>{
+public:
+    std::string operator()(std::map<std::string,T>& val){
+        std::stringstream ss;
+        for(auto x = val.begin();x!=val.end();x++){
+            if(x == val.begin()){
+                ss<<(x->first) << ':'<<(x->second);
+            }else{
+                ss<<','<<(x->first) << ':'<<(x->second);
+            }
+        }
+        return ss.str();
+    }
+};
 template<class T,class FromString = lexiCast<std::string,T>,class ToString = lexiCast<T,std::string> >
 class ConfigVar : public ConfigVarBase {
 public:

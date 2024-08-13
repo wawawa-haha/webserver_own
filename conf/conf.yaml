@@ -17,3 +17,17 @@ logs:
      - type: StdoutLogAppender
 floatxx: 1111.012
 vec: [1,2,3,4,5,6]
+list: [5,4,3,2,1]
+set: [11223,124,2624,883,124]
+uset: [1,2,8,9,1,2]
+umap: 
+  a: 1
+  b: 2
+  c: 3
+  d: 4
+map: 
+  a: 5
+  b: 4
+  c: 3
+  d: 2
+  e: 1
